@@ -1,3 +1,13 @@
+## 데스크톱 알림을 제어하는 스크립트
+### 알림창으로 다른 프로그램을 실행해야 하는 경우
+```
+$ notify-send.sh "Subject" "Message" \
+    -d "notify-send.sh 'Default Action'" \
+    -o "mainline:mainline-gtk 'Button Action'" \
+    -l "notify-send.sh 'Close Action'"
+```
+
+
 This is a fork of https://github.com/vlevit/notify-send.sh
 The main purpose and differences are:
 * Refactored to remove all the unnecessary external tools (dc, bc, sed), <<< here-docs (which create temp files behind the scenes), subshells (all but one use of foo=$(foo ...) could have been done with direct variables and saved a bunch of forks (and now are), and generally optimize and tighten the code aside from those issues.
